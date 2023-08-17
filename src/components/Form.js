@@ -4,7 +4,10 @@ const Form = () =>{
     const [data, setData] = useState({name: '', email: '', password: ''});
 
     return (
-        <div>
+        <form onSubmit = {(e) => {
+                e.preventDefault();
+                console.log(data);
+            }}>
             <label>Name: </label>
             <input type="text" placeholder="Name"
                 onChange = {(e) =>{
@@ -27,8 +30,8 @@ const Form = () =>{
                 }}
             />
 
-            <button onClick = {() => console.log(data)}>Submit</button>
-        </div>
+            <button>Submit</button>
+        </form>
     )
 }
 
